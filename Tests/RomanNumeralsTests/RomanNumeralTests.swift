@@ -16,4 +16,10 @@ final class RomanNumeralsTests: XCTestCase {
     func test_init_string_error() throws {
         XCTAssertThrowsError(try RomanNumeral("A"))
     }
+
+    func test_int_1() throws {
+        let numeral = try RomanNumeral("I")
+        let integer = Int(numeral)
+        XCTAssertEqual(integer, 1)
+    }
 }

@@ -9,6 +9,7 @@ extension RomanNumeralsTests {
         ("test_init", test_init),
         ("test_init_string_error", test_init_string_error),
         ("test_init_string", test_init_string),
+        ("test_int_1", test_int_1),
     ]
 }
 

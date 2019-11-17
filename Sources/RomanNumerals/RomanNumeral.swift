@@ -16,3 +16,10 @@ extension RomanNumeral {
         symbols = try string.map(Symbol.init)
     }
 }
+
+extension Int {
+
+    public init(_ numeral: RomanNumeral) {
+        self = 1
+    }
+}
