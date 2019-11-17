@@ -9,10 +9,6 @@ public enum Symbol: CaseIterable {
     case m
 }
 
-extension Symbol {
-    static var sorted: [Symbol] { allCases.sorted { Int($0) < Int($1) } }
-}
-
 public struct InvalidCharacter: Error {
     let character: Character
 }
