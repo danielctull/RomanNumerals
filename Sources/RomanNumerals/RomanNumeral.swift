@@ -23,3 +23,10 @@ extension Int {
         self = numeral.symbols.first.map(Int.init) ?? 0
     }
 }
+
+extension String {
+
+    public init(_ numeral: RomanNumeral) {
+        self = numeral.symbols.reduce(into: "") { $0.append(String($1)) }
+    }
+}

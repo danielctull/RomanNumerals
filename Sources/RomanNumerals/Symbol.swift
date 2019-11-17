@@ -43,3 +43,18 @@ extension Int {
         }
     }
 }
+
+extension String {
+
+    init(_ symbol: Symbol) {
+        switch symbol {
+        case .i: self = "I"
+        case .v: self = "V"
+        case .x: self = "X"
+        case .l: self = "L"
+        case .c: self = "C"
+        case .d: self = "D"
+        case .m: self = "M"
+        }
+    }
+}

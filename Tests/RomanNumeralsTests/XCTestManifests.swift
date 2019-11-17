@@ -17,6 +17,14 @@ extension RomanNumeralsTests {
         ("test_int_50", test_int_50),
         ("test_int_5", test_int_5),
         ("test_int_empty", test_int_empty),
+        ("test_string_1000", test_string_1000),
+        ("test_string_100", test_string_100),
+        ("test_string_10", test_string_10),
+        ("test_string_1", test_string_1),
+        ("test_string_500", test_string_500),
+        ("test_string_50", test_string_50),
+        ("test_string_5", test_string_5),
+        ("test_string_empty", test_string_empty),
     ]
 }
 
