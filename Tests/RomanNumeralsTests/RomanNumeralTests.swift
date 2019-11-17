@@ -37,8 +37,24 @@ final class RomanNumeralTests: XCTestCase {
         try XCTAssertEqual(RomanNumeral(5), RomanNumeral("V"))
     }
 
+    func test_init_integer_9() {
+        try XCTAssertEqual(RomanNumeral(9), RomanNumeral("IX"))
+    }
+
     func test_init_integer_10() {
         try XCTAssertEqual(RomanNumeral(10), RomanNumeral("X"))
+    }
+
+    func test_init_integer_40() {
+        try XCTAssertEqual(RomanNumeral(40), RomanNumeral("XL"))
+    }
+
+    func test_init_integer_49() {
+        try XCTAssertEqual(RomanNumeral(49), RomanNumeral("XLIX"))
+    }
+
+    func test_init_integer_45() {
+        try XCTAssertEqual(RomanNumeral(45), RomanNumeral("XLV"))
     }
 
     func test_init_integer_50() {
@@ -53,8 +69,20 @@ final class RomanNumeralTests: XCTestCase {
         try XCTAssertEqual(RomanNumeral(500), RomanNumeral("D"))
     }
 
+    func test_init_integer_888() throws {
+        try XCTAssertEqual(RomanNumeral(888), RomanNumeral("DCCCLXXXVIII"))
+    }
+
+    func test_init_integer_900() {
+        try XCTAssertEqual(RomanNumeral(900), RomanNumeral("CM"))
+    }
+
     func test_init_integer_1000() {
         try XCTAssertEqual(RomanNumeral(1000), RomanNumeral("M"))
+    }
+
+    func test_init_integer_1666() throws {
+        try XCTAssertEqual(RomanNumeral(1666), RomanNumeral("MDCLXVI"))
     }
 
     // MARK: - Int.init
@@ -101,6 +129,10 @@ final class RomanNumeralTests: XCTestCase {
 
     func test_int_10() throws {
         try XCTAssertEqual(Int(RomanNumeral("X")), 10)
+    }
+
+    func test_int_45() throws {
+        try XCTAssertEqual(Int(RomanNumeral("XLV")), 45)
     }
 
     func test_int_50() throws {

@@ -23,25 +23,44 @@ extension RomanNumeral {
 
     public init(_ integer: Int) {
 
+        guard integer > 0 else {
+            symbols = []
+            return
+        }
+
         var all = Symbol.allCases.sorted { Int($0) < Int($1) }
 
         var symbols: [Symbol] = []
-        var value = integer
         var previous: Symbol?
-        while value > 0, let symbol = all.popLast() {
-            defer { previous = symbol }
-            let amount = value / Int(symbol)
-            value %= Int(symbol)
+        var remainder = 0
 
-            if amount > 3, let previous = previous {
+        while let symbol = all.popLast() {
+
+            defer { previous = symbol }
+
+            remainder = integer % Int(symbol)
+            let amount = integer / Int(symbol)
+
+            guard amount > 0 else { continue }
+
+            // If symbol has 1, but the next has 4, then symbol == V, next == I,
+            // previous == X and this number is a 9. (Or equivalent for 900).
+            if amount == 1, let previous = previous, let next = all.last, remainder / Int(next) == 4 {
+                symbols.append(next)
+                symbols.append(previous)
+                remainder %= Int(next)
+                break
+            } else if amount <= 3 || symbol == .m {
+                symbols.append(contentsOf: Array(repeating: symbol, count: amount))
+                break
+            } else if let previous = previous {
                 symbols.append(symbol)
                 symbols.append(previous)
-            } else {
-                symbols.append(contentsOf: Array(repeating: symbol, count: amount))
+                break
             }
         }
 
-        self.symbols = symbols
+        self.symbols = symbols + RomanNumeral(remainder).symbols
     }
 }
 
