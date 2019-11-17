@@ -25,6 +25,14 @@ final class RomanNumeralTests: XCTestCase {
         try XCTAssertEqual(RomanNumeral(2), RomanNumeral("II"))
     }
 
+    func test_init_integer_3() {
+        try XCTAssertEqual(RomanNumeral(3), RomanNumeral("III"))
+    }
+
+    func test_init_integer_4() {
+        try XCTAssertEqual(RomanNumeral(4), RomanNumeral("IV"))
+    }
+
     func test_init_integer_5() {
         try XCTAssertEqual(RomanNumeral(5), RomanNumeral("V"))
     }

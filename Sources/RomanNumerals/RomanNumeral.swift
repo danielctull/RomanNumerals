@@ -27,10 +27,18 @@ extension RomanNumeral {
 
         var symbols: [Symbol] = []
         var value = integer
+        var previous: Symbol?
         while value > 0, let symbol = all.popLast() {
+            defer { previous = symbol }
             let amount = value / Int(symbol)
             value %= Int(symbol)
-            symbols.append(contentsOf: Array(repeating: symbol, count: amount))
+
+            if amount > 3, let previous = previous {
+                symbols.append(symbol)
+                symbols.append(previous)
+            } else {
+                symbols.append(contentsOf: Array(repeating: symbol, count: amount))
+            }
         }
 
         self.symbols = symbols

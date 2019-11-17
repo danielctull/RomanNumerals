@@ -12,6 +12,8 @@ extension RomanNumeralTests {
         ("test_init_integer_100", test_init_integer_100),
         ("test_init_integer_1000", test_init_integer_1000),
         ("test_init_integer_2", test_init_integer_2),
+        ("test_init_integer_3", test_init_integer_3),
+        ("test_init_integer_4", test_init_integer_4),
         ("test_init_integer_5", test_init_integer_5),
         ("test_init_integer_50", test_init_integer_50),
         ("test_init_integer_500", test_init_integer_500),
