@@ -1,7 +1,7 @@
 import XCTest
 import RomanNumerals
 
-final class RomanNumeralsTests: XCTestCase {
+final class RomanNumeralTests: XCTestCase {
 
     func test_init() {
         XCTAssertEqual(RomanNumeral(.i, .v).symbols, [.i, .v])
@@ -19,6 +19,10 @@ final class RomanNumeralsTests: XCTestCase {
 
     func test_init_integer_1() {
         try XCTAssertEqual(RomanNumeral(1), RomanNumeral("I"))
+    }
+
+    func test_init_integer_2() {
+        try XCTAssertEqual(RomanNumeral(2), RomanNumeral("II"))
     }
 
     // MARK: - Int.init

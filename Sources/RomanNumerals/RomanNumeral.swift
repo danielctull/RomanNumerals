@@ -22,7 +22,7 @@ extension RomanNumeral {
 extension RomanNumeral {
 
     public init(_ integer: Int) {
-        symbols = [.i]
+        symbols = Array(repeating: .i, count: integer)
     }
 }
 
