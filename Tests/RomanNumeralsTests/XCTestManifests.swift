@@ -13,6 +13,7 @@ extension RomanNumeralsTests {
         ("test_int_100", test_int_100),
         ("test_int_10", test_int_10),
         ("test_int_1", test_int_1),
+        ("test_int_2", test_int_2),
         ("test_int_500", test_int_500),
         ("test_int_50", test_int_50),
         ("test_int_5", test_int_5),

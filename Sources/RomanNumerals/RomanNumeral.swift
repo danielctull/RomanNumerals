@@ -20,7 +20,31 @@ extension RomanNumeral {
 extension Int {
 
     public init(_ numeral: RomanNumeral) {
-        self = numeral.symbols.first.map(Int.init) ?? 0
+
+        struct Calculation {
+            var total: Int = 0
+            var value: Int = 0
+            var currentSymbol: Symbol = .i
+        }
+
+        let calculation = numeral
+            .symbols
+            .reduce(into: Calculation()) { (caluclation, symbol) in
+
+                defer { caluclation.currentSymbol = symbol }
+
+                let runningValue = caluclation.value
+                let previous = Int(caluclation.currentSymbol)
+                let current = Int(symbol)
+
+                if current > previous {
+                    caluclation.value = current - runningValue
+                } else {
+                    caluclation.value = current + runningValue
+                }
+            }
+
+        self = calculation.total + calculation.value
     }
 }
 
