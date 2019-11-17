@@ -39,8 +39,11 @@ extension Int {
 
                 if current > previous {
                     caluclation.value = current - runningValue
+                } else if current < previous {
+                    caluclation.total += runningValue
+                    caluclation.value = current
                 } else {
-                    caluclation.value = current + runningValue
+                    caluclation.value += current
                 }
             }
 

@@ -89,9 +89,24 @@ final class RomanNumeralsTests: XCTestCase {
         XCTAssertEqual(Int(numeral), 500)
     }
 
+    func test_int_888() throws {
+        let numeral = try RomanNumeral("DCCCLXXXVIII")
+        XCTAssertEqual(Int(numeral), 888)
+    }
+
     func test_int_1000() throws {
         let numeral = try RomanNumeral("M")
         XCTAssertEqual(Int(numeral), 1000)
+    }
+
+    func test_int_2019() throws {
+        let numeral = try RomanNumeral("MMXIX")
+        XCTAssertEqual(Int(numeral), 2019)
+    }
+
+    func test_int_2089() throws {
+        let numeral = try RomanNumeral("MMLXXXIX")
+        XCTAssertEqual(Int(numeral), 2089)
     }
 
     // MARK: - String.init
