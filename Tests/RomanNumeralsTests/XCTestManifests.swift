@@ -6,6 +6,9 @@ extension RomanNumeralTests {
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__RomanNumeralTests = [
+        ("test_add_10_1000", test_add_10_1000),
+        ("test_add_1_1", test_add_1_1),
+        ("test_add_270_301", test_add_270_301),
         ("test_init", test_init),
         ("test_init_integer_1", test_init_integer_1),
         ("test_init_integer_10", test_init_integer_10),
@@ -54,6 +57,9 @@ extension RomanNumeralTests {
         ("test_string_50", test_string_50),
         ("test_string_5", test_string_5),
         ("test_string_empty", test_string_empty),
+        ("test_subtract_10_3", test_subtract_10_3),
+        ("test_subtract_10_6", test_subtract_10_6),
+        ("test_subtract_190_26", test_subtract_190_26),
     ]
 }
 

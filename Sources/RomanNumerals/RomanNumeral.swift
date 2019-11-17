@@ -17,6 +17,13 @@ extension RomanNumeral {
     }
 }
 
+// MARK: - CustomStringConvertible
+
+extension RomanNumeral: CustomStringConvertible {
+
+    public var description: String { String(self) }
+}
+
 // MARK: - Integer conversion
 
 extension RomanNumeral {
@@ -102,5 +109,28 @@ extension String {
 
     public init(_ numeral: RomanNumeral) {
         self = numeral.symbols.reduce(into: "") { $0.append(String($1)) }
+    }
+}
+
+// MARK: - AdditiveArithmetic
+
+extension RomanNumeral: AdditiveArithmetic {
+
+    public static let zero = RomanNumeral(symbols: [])
+
+    public static func += (lhs: inout RomanNumeral, rhs: RomanNumeral) {
+        lhs = lhs + rhs
+    }
+
+    public static func + (lhs: RomanNumeral, rhs: RomanNumeral) -> RomanNumeral {
+        RomanNumeral(Int(lhs) + Int(rhs))
+    }
+
+    public static func -= (lhs: inout RomanNumeral, rhs: RomanNumeral) {
+        lhs = lhs - rhs
+    }
+
+    public static func - (lhs: RomanNumeral, rhs: RomanNumeral) -> RomanNumeral {
+        RomanNumeral(Int(lhs) - Int(rhs))
     }
 }

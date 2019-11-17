@@ -200,4 +200,34 @@ final class RomanNumeralTests: XCTestCase {
     func test_string_1000() throws {
         try XCTAssertEqual(String(RomanNumeral("M")), "M")
     }
+
+    // MARK: - AdditiveArithmetic
+
+    func test_add_1_1() throws {
+        try XCTAssertEqual(RomanNumeral("I") + RomanNumeral("I"), RomanNumeral("II"))
+    }
+
+    func test_add_10_1000() throws {
+        try XCTAssertEqual(RomanNumeral("X") + RomanNumeral("M"), RomanNumeral("MX"))
+    }
+
+    func test_add_270_301() throws {
+        var numeral = try RomanNumeral("CCLXX")
+        numeral += try RomanNumeral("CCCI")
+        try XCTAssertEqual(numeral, RomanNumeral("DLXXI"))
+    }
+
+    func test_subtract_190_26() throws {
+        try XCTAssertEqual(RomanNumeral("CXC") - RomanNumeral("XXVI"), RomanNumeral("CLXIV"))
+    }
+
+    func test_subtract_10_6() throws {
+        try XCTAssertEqual(RomanNumeral("X") - RomanNumeral("VI"), RomanNumeral("IV"))
+    }
+
+    func test_subtract_10_3() throws {
+        var numeral = try RomanNumeral("X")
+        numeral -= try RomanNumeral("III")
+        try XCTAssertEqual(numeral, RomanNumeral("VII"))
+    }
 }
