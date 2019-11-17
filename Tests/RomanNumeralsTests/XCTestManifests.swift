@@ -8,7 +8,13 @@ extension RomanNumeralTests {
     static let __allTests__RomanNumeralTests = [
         ("test_init", test_init),
         ("test_init_integer_1", test_init_integer_1),
+        ("test_init_integer_10", test_init_integer_10),
+        ("test_init_integer_100", test_init_integer_100),
+        ("test_init_integer_1000", test_init_integer_1000),
         ("test_init_integer_2", test_init_integer_2),
+        ("test_init_integer_5", test_init_integer_5),
+        ("test_init_integer_50", test_init_integer_50),
+        ("test_init_integer_500", test_init_integer_500),
         ("test_init_string_error", test_init_string_error),
         ("test_init_string", test_init_string),
         ("test_int_1000", test_int_1000),

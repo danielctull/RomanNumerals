@@ -22,7 +22,18 @@ extension RomanNumeral {
 extension RomanNumeral {
 
     public init(_ integer: Int) {
-        symbols = Array(repeating: .i, count: integer)
+
+        var all = Symbol.allCases.sorted { Int($0) < Int($1) }
+
+        var symbols: [Symbol] = []
+        var value = integer
+        while value > 0, let symbol = all.popLast() {
+            let amount = value / Int(symbol)
+            value %= Int(symbol)
+            symbols.append(contentsOf: Array(repeating: symbol, count: amount))
+        }
+
+        self.symbols = symbols
     }
 }
 

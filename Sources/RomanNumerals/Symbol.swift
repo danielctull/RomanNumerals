@@ -1,5 +1,5 @@
 
-public enum Symbol {
+public enum Symbol: CaseIterable {
     case i
     case v
     case x
@@ -7,6 +7,10 @@ public enum Symbol {
     case c
     case d
     case m
+}
+
+extension Symbol {
+    static var sorted: [Symbol] { allCases.sorted { Int($0) < Int($1) } }
 }
 
 public struct InvalidCharacter: Error {
