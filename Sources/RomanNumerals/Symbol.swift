@@ -13,10 +13,19 @@ public struct InvalidCharacter: Error {
     let character: Character
 }
 
+extension InvalidCharacter: CustomStringConvertible {
+    public var description: String {
+        """
+        Invalid roman numeral: \(character)
+        Valid roman numerals: M C D L X V I
+        """
+    }
+}
+
 extension Symbol: Equatable {
 
     init(character: Character) throws {
-        switch character {
+        switch character.uppercased() {
         case "I": self = .i
         case "V": self = .v
         case "X": self = .x
