@@ -20,6 +20,6 @@ extension RomanNumeral {
 extension Int {
 
     public init(_ numeral: RomanNumeral) {
-        self = 1
+        self = numeral.symbols.first.map(Int.init) ?? 0
     }
 }

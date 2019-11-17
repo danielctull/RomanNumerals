@@ -28,3 +28,18 @@ extension Symbol {
         }
     }
 }
+
+extension Int {
+
+    init(_ symbol: Symbol) {
+        switch symbol {
+        case .i: self = 1
+        case .v: self = 5
+        case .x: self = 10
+        case .l: self = 50
+        case .c: self = 100
+        case .d: self = 500
+        case .m: self = 1000
+        }
+    }
+}
