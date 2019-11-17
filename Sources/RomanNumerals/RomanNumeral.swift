@@ -1,5 +1,5 @@
 
-public struct RomanNumeral {
+public struct RomanNumeral: Equatable {
     public let symbols: [Symbol]
 }
 
@@ -14,6 +14,15 @@ extension RomanNumeral {
 
     public init(_ string: String) throws {
         symbols = try string.map(Symbol.init)
+    }
+}
+
+// MARK: - Integer conversion
+
+extension RomanNumeral {
+
+    public init(_ integer: Int) {
+        symbols = [.i]
     }
 }
 

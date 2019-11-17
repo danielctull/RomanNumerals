@@ -7,11 +7,13 @@ extension RomanNumeralsTests {
     // to regenerate.
     static let __allTests__RomanNumeralsTests = [
         ("test_init", test_init),
+        ("test_init_integer_1", test_init_integer_1),
         ("test_init_string_error", test_init_string_error),
         ("test_init_string", test_init_string),
         ("test_int_1000", test_int_1000),
         ("test_int_100", test_int_100),
         ("test_int_10", test_int_10),
+        ("test_int_1666", test_int_1666),
         ("test_int_1", test_int_1),
         ("test_int_2019", test_int_2019),
         ("test_int_2089", test_int_2089),

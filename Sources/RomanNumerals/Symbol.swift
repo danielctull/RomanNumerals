@@ -13,7 +13,7 @@ public struct InvalidCharacter: Error {
     let character: Character
 }
 
-extension Symbol {
+extension Symbol: Equatable {
 
     init(character: Character) throws {
         switch character {
