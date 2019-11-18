@@ -9,6 +9,7 @@ extension RomanNumeralTests {
         ("test_add_10_1000", test_add_10_1000),
         ("test_add_1_1", test_add_1_1),
         ("test_add_270_301", test_add_270_301),
+        ("test_description", test_description),
         ("test_init", test_init),
         ("test_init_integer_1", test_init_integer_1),
         ("test_init_integer_10", test_init_integer_10),

@@ -230,4 +230,10 @@ final class RomanNumeralTests: XCTestCase {
         numeral -= try RomanNumeral("III")
         try XCTAssertEqual(numeral, RomanNumeral("VII"))
     }
+
+    // MARK: - CustomStringConvertible
+
+    func test_description() throws {
+        try XCTAssertEqual(RomanNumeral("MDCLXVI").description, "MDCLXVI")
+    }
 }
