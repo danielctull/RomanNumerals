@@ -83,7 +83,7 @@ extension Int {
 
         let calculation = numeral
             .symbols
-            .reduce(into: Calculation()) { (caluclation, symbol) in
+            .reduce(into: Calculation()) { caluclation, symbol in
 
                 defer { caluclation.currentSymbol = symbol }
 
@@ -119,7 +119,9 @@ extension RomanNumeral: AdditiveArithmetic {
     public static let zero = RomanNumeral(symbols: [])
 
     public static func += (lhs: inout RomanNumeral, rhs: RomanNumeral) {
+        // swiftlint:disable shorthand_operator
         lhs = lhs + rhs
+        // swiftlint:enable shorthand_operator
     }
 
     public static func + (lhs: RomanNumeral, rhs: RomanNumeral) -> RomanNumeral {
@@ -127,7 +129,9 @@ extension RomanNumeral: AdditiveArithmetic {
     }
 
     public static func -= (lhs: inout RomanNumeral, rhs: RomanNumeral) {
+        // swiftlint:disable shorthand_operator
         lhs = lhs - rhs
+        // swiftlint:enable shorthand_operator
     }
 
     public static func - (lhs: RomanNumeral, rhs: RomanNumeral) -> RomanNumeral {

@@ -1,5 +1,6 @@
-import XCTest
+
 import RomanNumerals
+import XCTest
 
 final class RomanNumeralTests: XCTestCase {
 
