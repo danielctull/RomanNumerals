@@ -51,6 +51,8 @@ jobs:
       run: swift build -v -c debug
     - name: Debug Test
       run: swift test --enable-code-coverage -v -c debug
+    - name: Print codecov
+      run: ls .build/debug/codecov
     - name: Upload Code Coverage
       uses: codecov/codecov-action@v1
       with:
