@@ -52,7 +52,7 @@ jobs:
     - name: Debug Test
       run: swift test --enable-code-coverage -v -c debug
     - name: Print codecov
-      run: ls .build/debug/codecov
+      run: echo .build/debug/codecov/RomanNumerals.json
     - name: Upload Code Coverage
       uses: codecov/codecov-action@v1
       with:
