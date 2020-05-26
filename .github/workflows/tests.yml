@@ -28,6 +28,12 @@ jobs:
       run: swift build --enable-test-discovery -v -c debug
     - name: Debug Test
       run: swift test --enable-test-discovery --enable-code-coverage -v -c debug
+    - name: Upload Code Coverage
+      uses: codecov/codecov-action@v1
+      with:
+        name: "Linux (${{ matrix.image }})"
+        flags: linux
+        file: .build/debug/codecov/RomanNumerals.json
 
   macos:
     name: macOS
@@ -50,7 +56,6 @@ jobs:
     - name: Upload Code Coverage
       uses: codecov/codecov-action@v1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
-        name: macOS
+        name: MacOS
         flags: macOS
         file: .build/debug/codecov/RomanNumerals.json
